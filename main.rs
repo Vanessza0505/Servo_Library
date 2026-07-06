@@ -65,7 +65,7 @@ async fn main(spawner: Spawner) {
 
 
     
-    let mut servo = Servo::new(channel0, min_duty, max_duty,180, 170, 10);
+    let mut servo = Servo::new(channel0, min_duty, max_duty,180, 170, 1);
     
 
     // servo.open().await;
