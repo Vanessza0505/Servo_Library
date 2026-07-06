@@ -6,8 +6,8 @@ use esp_hal::ledc::channel::Channel;
 use esp_hal::ledc::HighSpeed;
 
 
-pub struct Servo {
-    channel: Channel<'static, HighSpeed>,
+pub struct Servo<'a> {
+    channel: Channel<'a, HighSpeed>,
     min_duty: u32,
     max_duty: u32,
     max_angle: u32,
@@ -15,9 +15,9 @@ pub struct Servo {
     open_time: u64
 }
 
-impl Servo {
+impl<'a> Servo<'a> {
     pub fn new(
-        channel: Channel<'static, HighSpeed>,
+        channel: Channel<'a, HighSpeed>,
         min_duty: u32,
         max_duty: u32,
         max_angle: u32,
